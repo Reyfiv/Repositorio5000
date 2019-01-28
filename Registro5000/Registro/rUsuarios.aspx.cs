@@ -151,15 +151,7 @@ namespace Registro5000.Registro
 
             if (usuario != null)
             {
-
-                NombresTextBox.Text = usuario.Nombres;
-                NombreUsuarioTextBox.Text = usuario.NombreUsuario;
-                ContraseñaTextBox.Text = usuario.Contraseña;
-                ConfirmarContraseñaTextBox.Text = usuario.ConfirmarContraseña;
-                EmailTextBox.Text = usuario.Email;
-                TelefonoTextBox.Text = usuario.Telefono;
-                CelularTextBox.Text = usuario.Celular;
-                FechaTextBox.Text = usuario.Fecha.ToString();
+                LlenaCampos(usuario);
             }
             else
                 MostrarMensaje(TiposMensaje.Error, "Error, No existe");

@@ -16,7 +16,7 @@
                 <div class="col-md-1 col-sm-2 col-xs-4">
                     <asp:TextBox ID="UsuarioIdTextBox" runat="server" placeholder="0" class="form-control input-sm" Style="font-size: medium" TextMode="Number"></asp:TextBox>                  
                 </div>
-                 <asp:RegularExpressionValidator ID="ValidaID" runat="server" ErrorMessage='Campo "UsuarioId" solo acepta numeros' ControlToValidate="UsuarioIdTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Entrada no valida"></asp:RegularExpressionValidator>
+                 <asp:RegularExpressionValidator ID="ValidaID" runat="server" ErrorMessage='Campo "UsuarioId" solo acepta numeros' ControlToValidate="UsuarioIdTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Entrada no valida" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
                 <div class="col-md-1 col-sm-2 col-xs-4">
                     <asp:Button ID="BuscarButton" runat="server" Text="Buscar" class="btn btn-info btn-md" OnClick="BuscarButton_Click1" />
                 </div>
@@ -28,7 +28,7 @@
                 <div class="col-md-8">
                     <asp:TextBox ID="NombresTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>               
                 </div>
-                <asp:RequiredFieldValidator ID="Validanombre" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="NombresTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Nombres obligatorio">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="Validanombre" runat="server" ErrorMessage="El campo &quot;Nombres&quot; esta vacio" ControlToValidate="NombresTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Nombres obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
             <%--hasta aqui
             <%--Nombre de usuario--%>     
@@ -37,7 +37,7 @@
                 <div class="col-md-8">
                     <asp:TextBox ID="NombreUsuarioTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>                  
                 </div>
-                <asp:RequiredFieldValidator ID="ValidaNombreUsuario" runat="server" ErrorMessage="El campo &quot;Nombre de usuario&quot; esta vacio" ControlToValidate="NombreUsuarioTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Nombre de usuario obligatorio">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="ValidaNombreUsuario" runat="server" ErrorMessage="El campo &quot;Nombre de usuario&quot; esta vacio" ControlToValidate="NombreUsuarioTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Nombre de usuario obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
             <%--hasta aqui--%>
             <%--Contraseña--%>
@@ -46,7 +46,7 @@
                 <div class="col-md-8">
                     <asp:TextBox type="password" ID="ContraseñaTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>            
                 </div>
-                 <asp:RequiredFieldValidator ID="ValidaContraseña" runat="server" ErrorMessage="El campo &quot;Contraseña&quot; esta vacio" ControlToValidate="ContraseñaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Contraseña obligatorio">*</asp:RequiredFieldValidator>
+                 <asp:RequiredFieldValidator ID="ValidaContraseña" runat="server" ErrorMessage="El campo &quot;Contraseña&quot; esta vacio" ControlToValidate="ContraseñaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Contraseña obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
             <%--hasta aqui--%>
             <%--Confirmar Contraseña--%>
@@ -55,8 +55,8 @@
                 <div class="col-md-8">
                     <asp:TextBox type="password" ID="ConfirmarContraseñaTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>                  
                 </div>
-                <asp:CompareValidator ID="ComparaContraseñas" runat="server" ErrorMessage="Las Contraseñas no son iguales" ControlToValidate="ConfirmarContraseñaTextBox" ControlToCompare="ContraseñaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Las Contraseñas no son iguales">*</asp:CompareValidator>
-              <asp:RequiredFieldValidator ID="ValidaConfirmarContraseña" runat="server" ErrorMessage="El campo &quot;Nombres&quot; estas vacio" ControlToValidate="ConfirmarContraseñaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Confirmar Contraseña obligatorio">*</asp:RequiredFieldValidator>
+                <asp:CompareValidator ID="ComparaContraseñas" runat="server" ErrorMessage="Las Contraseñas no son iguales" ControlToValidate="ConfirmarContraseñaTextBox" ControlToCompare="ContraseñaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Las Contraseñas no son iguales" ValidationGroup="Guardar">*</asp:CompareValidator>
+              <asp:RequiredFieldValidator ID="ValidaConfirmarContraseña" runat="server" ErrorMessage="El campo &quot;Nombres&quot; estas vacio" ControlToValidate="ConfirmarContraseñaTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Confirmar Contraseña obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
             <%--hasta aqui--%>
             <%--Email--%>
@@ -72,18 +72,18 @@
                 <label for="TelefonoTextBox" class="col-md-3 control-label input-sm" style="font-size: medium">Telefono</label>
                 <div class="col-md-3">
                     <asp:TextBox  ID="TelefonoTextBox" runat="server" class="form-control input-sm" Style="font-size: medium" TextMode="Phone"></asp:TextBox>   
-                    <asp:RegularExpressionValidator ID="ValidaTelefono" runat="server" ErrorMessage='Campo "Telefono" solo acepta numeros' ControlToValidate="TelefonoTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Solo acepta numeros"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="ValidaTelefono" runat="server" ErrorMessage='Campo "Telefono" solo acepta numeros' ControlToValidate="TelefonoTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Solo acepta numeros" ValidationGroup="Guardar"></asp:RegularExpressionValidator>
                     <%--<asp:RangeValidator ID="RangeTelefono" runat="server" ErrorMessage="Ingrese un Telefono valido" ForeColor="Red" MaximumValue="12" MinimumValue="10" ControlToValidate="TelefonoTextBox">*</asp:RangeValidator> --%>
-                    <asp:RequiredFieldValidator ID="ValidaVacioTelefono" runat="server" ErrorMessage="El campo &quot;Telefono&quot; esta vacio" ControlToValidate="TelefonoTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Telefono es obligatorio">*</asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="ValidaVacioTelefono" runat="server" ErrorMessage="El campo &quot;Telefono&quot; esta vacio" ControlToValidate="TelefonoTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Telefono es obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
                 </div>
 
                 <label for="CelularTextBox" class="col-md-1 control-label input-sm" style="font-size: medium">Celular</label>
                 <div class="col-md-3">
                     <asp:TextBox  ID="CelularTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>                  
                 </div>
-                <asp:RegularExpressionValidator ID="ValidaCelular" runat="server" ErrorMessage='Campo "Celular" solo acepta numeros' ControlToValidate="CelularTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Solo acepta numeros"></asp:RegularExpressionValidator> 
+                <asp:RegularExpressionValidator ID="ValidaCelular" runat="server" ErrorMessage='Campo "Celular" solo acepta numeros' ControlToValidate="CelularTextBox" ValidationExpression="^[0-9]*" Text="*" ForeColor="Red" Display="Dynamic" ToolTip="Solo acepta numeros" ValidationGroup="Guardar"></asp:RegularExpressionValidator> 
                 <%--<asp:RangeValidator ID="RangeCelular" runat="server" ErrorMessage="Ingrese un Celular valido" ForeColor="Red" MaximumValue="12" MinimumValue="10" ControlToValidate="CelularTextBox" Display="Dynamic">*</asp:RangeValidator>--%>
-                <asp:RequiredFieldValidator ID="ValidaVacioCelular" runat="server" ErrorMessage="El campo &quot;Celular&quot; esta vacio" ControlToValidate="CelularTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Celular obligatorio">*</asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="ValidaVacioCelular" runat="server" ErrorMessage="El campo &quot;Celular&quot; esta vacio" ControlToValidate="CelularTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Celular obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
             <%--hasta aqui--%>
             <%--Fecha--%>
@@ -99,7 +99,7 @@
                 <div class="text-center">
                     <div class="form-group">
                         <asp:Button ID="NuevoButton" runat="server" Text="Nuevo" class="btn btn-primary btn-lg" OnClick="NuevoButton_Click1" />
-                        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success btn-lg" OnClick="GuardarButton_Click1" />
+                        <asp:Button ID="GuardarButton" runat="server" Text="Guardar" class="btn btn-success btn-lg" OnClick="GuardarButton_Click1" ValidationGroup="Guardar" />
                         <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger btn-lg" OnClick="EliminarButton_Click1" />
                     </div>
                 </div>
