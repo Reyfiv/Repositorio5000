@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Registro5000.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%:Page.Title%>Registro 5000</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <asp:PlaceHolder ID="head" runat="server">
+       
+    </asp:PlaceHolder>
+
+    <style type="text/css">
+        .auto-style2 {
+            font-size: 30pt;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+            <%--barra con leyenda menu principal--%>
+            <div class="row">
+                <div class="col-md-12" style="background-color:cornflowerblue; top: 0px; left: 0px; height: 72px;">
+                    <h3 style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align:center; height: 60px; color:aliceblue;" class="auto-style2"> <strong>Menu Principal</strong></h3>
+                </div>
+            </div>
+
+           <%--menu principal--%>
+           <div class="row">
+               <div>
+
+                  <nav class="navbar navbar-default">
+                      <div class="container-fluid">
+                          <div class="navbar-header">
+                             <a class="navbar-brand" href="/default.aspx">Registro 5000</a>
+                       </div>
+
+                       <ul class="nav navbar-nav">
+                          <li class="active"><a href="/Registros/rUsuarios.aspx"><span class="glyphicon glyphicon-book"></span> Registros</a></li>
+                      </ul>
+
+                      <ul class="nav navbar-nav">
+                            <li class="active"><a href="/Consultas/cUsuarios.aspx"><span class="glyphicon glyphicon-list-alt"></span> Consultas</a></li>
+                      </ul>
+
+                      <ul class="nav navbar-nav">
+                            <li class="active"><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
+                      </ul>
+
+                      <ul class="nav navbar-nav navbar-right">
+                            <li><a href="#"><span class="glyphicon glyphicon-remove-sign"></span> Cerrar sesion</a></li>
+                      </ul>
+
+                     </div>
+
+                   </nav>
+                 </div>
+               </div>
+  
+            <%--contenedor y pie de pagina--%>
+            <div class =" container body-content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+
+                <hr />
+                <footer>
+                    <p> &copy; <%: DateTime.Now.Year %> - Copyright Registro 5000</p>
+                </footer>
+            </div>
+     </form>
+</body>
+</html>
