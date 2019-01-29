@@ -37,5 +37,20 @@ namespace BLL
             }
             return paso;
         }
+
+        //public bool UsuarioAuntenticar(string usuario)
+        //{
+
+        //    Expression<Func<Usuarios, bool>> filtrar = x => true;
+        //    filtrar = t => t.NombreUsuario.Equals(usuario);
+        //    bool paso = true;
+        //    if (Listar(filtrar) != null)
+        //    {
+        //        paso = false;
+        //    }
+        //    return paso;
+        //}
+
+
     }
 }

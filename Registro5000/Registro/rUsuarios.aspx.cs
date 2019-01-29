@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -156,5 +157,19 @@ namespace Registro5000.Registro
             else
                 MostrarMensaje(TiposMensaje.Error, "Error, No existe");
         }
+
+        //protected void ValidaExiste_ServerValidate(object source, ServerValidateEventArgs args)
+        //{
+        //    Usuarios user = new Usuarios();
+        //    BLL.LoginRepositorio repositorio = new LoginRepositorio();
+
+        //    if (repositorio.UsuarioAuntenticar(NombreUsuarioTextBox.Text))
+        //    {
+        //        args.IsValid = true;
+        //    }
+        //    else
+        //        args.IsValid = false;
+        //}
+
     }
 }

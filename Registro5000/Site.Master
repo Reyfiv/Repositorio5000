@@ -43,7 +43,7 @@
                        </div>
 
                        <ul class="nav navbar-nav">
-                          <li class="active"><a href="/Registros/rUsuarios.aspx"><span class="glyphicon glyphicon-book"></span> Registros</a></li>
+                          <li class="active"><a href="/Registro/rUsuarios.aspx"><span class="glyphicon glyphicon-book"></span> Registros</a></li>
                       </ul>
 
                       <ul class="nav navbar-nav">
@@ -54,9 +54,9 @@
                             <li class="active"><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
                       </ul>
 
-                      <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-remove-sign"></span> Cerrar sesion</a></li>
-                      </ul>
+                      <div style="text-align:right">
+                          <asp:LinkButton ID="OutButton" runat="server" OnClick="OutButton_Click">Cerrar sesion</asp:LinkButton>
+                      </div>
 
                      </div>
 

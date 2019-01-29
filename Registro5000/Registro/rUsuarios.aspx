@@ -9,6 +9,9 @@
 
     <div class="panel-body">
         <div class="form-horizontal col-md-12" role="form">
+            <div class="col-lg-12" style="text-align:right">
+                <asp:Label ID="ErrorLabel" runat="server" Text=""></asp:Label>
+            </div>
 
             <%--UsuarioId--%>
             <div class="form-group">
@@ -38,6 +41,7 @@
                     <asp:TextBox ID="NombreUsuarioTextBox" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>                  
                 </div>
                 <asp:RequiredFieldValidator ID="ValidaNombreUsuario" runat="server" ErrorMessage="El campo &quot;Nombre de usuario&quot; esta vacio" ControlToValidate="NombreUsuarioTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Nombre de usuario obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
+               <%-- <asp:CustomValidator ID="ValidaExiste" runat="server" ErrorMessage="Usuario o Email ya existen"  ControlToValidate="NombreUsuarioTextBox" ValidationGroup="Guardar" OnServerValidate="ValidaExiste_ServerValidate" Display="Dynamic" ForeColor="Red"></asp:CustomValidator>--%>
             </div>
             <%--hasta aqui--%>
             <%--Contraseña--%>
@@ -64,7 +68,7 @@
                 <label for="EmailTextBox" class="col-md-3 control-label input-sm" style="font-size: medium">Email</label>
                 <div class="col-md-8">
                     <asp:TextBox ID="EmailTextBox" TextMode="Email" runat="server" class="form-control input-sm" Style="font-size: medium"></asp:TextBox>                  
-                </div>            
+                </div>
             </div>
             <%--Hasta aqui--%>        
             <%--Telefono y celular--%>
@@ -89,7 +93,7 @@
             <%--Fecha--%>
             <div class="form-group">
                 <div class="col-md-8">
-                    <asp:TextBox ID="FechaTextBox" TextMode="Date" runat="server" class="form-control input-sm" Style="font-size: medium" Visible="False"></asp:TextBox>
+                    <asp:TextBox ID="FechaTextBox" TextMode="Date" runat="server" class="form-control input-sm" Style="font-size: medium" Visible="false"></asp:TextBox>
                 </div>
             </div>
 
@@ -103,10 +107,6 @@
                         <asp:Button ID="EliminarButton" runat="server" Text="Eliminar" class="btn btn-danger btn-lg" OnClick="EliminarButton_Click1" />
                     </div>
                 </div>
-            </div>
-
-            <div class="col-lg-12">
-                <asp:Label ID="ErrorLabel" runat="server" Text=""></asp:Label>
             </div>
 
         </div>
