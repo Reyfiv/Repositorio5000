@@ -17,7 +17,7 @@ namespace BLL
             {
                 Lista = _contexto.Set<Usuarios>().Where(expression).ToList();
             }
-            catch (Exception)
+            catch(Exception)
             {
                 throw;
             }

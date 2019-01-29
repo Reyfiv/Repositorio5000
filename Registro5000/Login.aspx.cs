@@ -19,21 +19,27 @@ namespace Registro5000
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+            
             Usuarios user = new Usuarios();
             BLL.LoginRepositorio repositorio = new LoginRepositorio();
-          
-            if (repositorio.Auntenticar(UsuarioTextBox.Text, ContraseñaTextBox.Text))
-            {
-                FormsAuthentication.RedirectFromLoginPage(user.NombreUsuario, true);
-            }
-            else
-                MostrarMensaje(TiposMensaje.Error, "Usuario no existe");
 
-            if (IsValid == false)
+            if (UsuarioTextBox.Text.Length > 0 && ContraseñaTextBox.Text.Length > 0)
             {
-                MostrarMensaje(TiposMensaje.Error, "Favor revisar todos los campos");
-                return;
+
+
+                if (repositorio.Auntenticar(UsuarioTextBox.Text, ContraseñaTextBox.Text))
+                {
+                    FormsAuthentication.RedirectFromLoginPage(user.NombreUsuario, true);
+                }
+                else
+                    MostrarMensaje(TiposMensaje.Error, "Usuario no existe");
             }
+
+            //if (IsValid == false)
+            //{
+            //    MostrarMensaje(TiposMensaje.Error, "Favor revisar todos los campos");
+            //    return;
+            //}
         }
 
         private void MostrarMensaje(TiposMensaje tipo, string mensaje)

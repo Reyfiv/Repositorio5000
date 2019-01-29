@@ -19,12 +19,12 @@
                 <%--Usuario--%>
                 <div class="form-group">
                     <asp:TextBox ID="UsuarioTextBox" placeholder="Usuario" TabIndex="1" class="form-control" runat="server"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="valida1" runat="server" ErrorMessage="*" ValidationGroup="Login" ControlToValidate="UsuarioTextBox" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
+                   <%-- <asp:RegularExpressionValidator ID="valida1" runat="server" ErrorMessage="*" required="requiered" ValidationGroup="Login" ControlToValidate="UsuarioTextBox" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>--%>
                 </div>
                 <%--Contraseña--%>
                 <div class="form-group">
                     <asp:TextBox type="password" ID="ContraseñaTextBox" placeholder="Contraseña" TabIndex="2" class="form-control" runat="server"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="Valida2" runat="server" ErrorMessage="*" ValidationGroup="Login" ControlToValidate="ContraseñaTextBox" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
+                   <%-- <asp:RegularExpressionValidator ID="Valida2" runat="server" ErrorMessage="*" required="requiered" ValidationGroup="Login" ControlToValidate="ContraseñaTextBox" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>--%>
                 </div>
                 <hr />
                 <%--Botones--%>
