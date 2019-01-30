@@ -53,7 +53,7 @@ namespace BLL
             return paso;
         }
 
-        public bool Eliminar(int id)
+        public virtual bool Eliminar(int id)
         {
             bool paso = false;
             try

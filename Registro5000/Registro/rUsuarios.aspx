@@ -90,11 +90,35 @@
                 <asp:RequiredFieldValidator ID="ValidaVacioCelular" runat="server" ErrorMessage="El campo &quot;Celular&quot; esta vacio" ControlToValidate="CelularTextBox" ForeColor="Red" Display="Dynamic" ToolTip="Campo Celular obligatorio" ValidationGroup="Guardar">*</asp:RequiredFieldValidator>
             </div>
             <%--hasta aqui--%>
+
             <%--Fecha--%>
             <div class="form-group">
                 <div class="col-md-8">
                     <asp:TextBox ID="FechaTextBox" TextMode="Date" runat="server" class="form-control input-sm" Style="font-size: medium" Visible="false"></asp:TextBox>
                 </div>
+            </div>
+
+             <%--Permisos--%>
+            <div class="form-group">
+                <label for="PermisosDropDownList" class="col-md-3 control-label input-sm" style="font-size:medium"> Permisos</label>
+                <div class="col-md-8">
+                   <asp:DropDownList ID="PermisosDropDownList" runat="server" Class="form-control input-sm" style="font-size:medium">
+                     </asp:DropDownList>
+                </div>
+
+                 <div class="col-md-1 col-sm-2 col-xs-4 ">
+                     <asp:Button class="btn btn-success btn-md" ID="AgregarButton" runat="server" Text="+" OnClick="AgregarButton_Click"  />
+                  </div>
+            </div>
+
+            <div>  
+                <asp:GridView ID="DatosGridView" runat="server" class="table table-condensed tabled-bordered table-responsive" CellPadding="6" ForeColor="#333333" GridLines="None">
+                <AlternatingRowStyle BackColor="White" />
+                    <Columns>
+                    </Columns>
+                    <HeaderStyle BackColor="cornflowerblue" Font-Bold="true" ForeColor="White" />
+                    <RowStyle BackColor="#EFF3FB" />
+               </asp:GridView>
             </div>
 
             <br />

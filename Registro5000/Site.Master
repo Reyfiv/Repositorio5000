@@ -11,41 +11,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+         <%--Librerias para el toast--%>
         <link href="./Media/css/Grey/ListBox.Grey.css" rel="stylesheet" type="text/css" /> 
-    <link href="./Media/css/WebTrack.css" rel="stylesheet" type="text/css" /> 
-
-    <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script> 
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" 
-        rel="stylesheet" /> 
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js" 
-        type="text/javascript"></script> 
-
+        <link href="./Media/css/WebTrack.css" rel="stylesheet" type="text/css" /> 
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js" type="text/javascript"></script> 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/css/toastr.css" 
+             rel="stylesheet" /> 
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.0.1/js/toastr.js" 
+            type="text/javascript"></script> 
+         <%--Programacion en Javascript para que funcione el toast--%>
         <script type="text/javascript">
             function Notify(msg, title, type, clear, pos, sticky) { 
-            //  toastr.options.positionClass = "toast-bottom-right"; 
-            //  toastr.options.positionClass = "toast-bottom-left"; 
-            //  toastr.options.positionClass = "toast-top-right"; 
-            //  toastr.options.positionClass = "toast-top-left"; 
-            //  toastr.options.positionClass = "toast-bottom-full-width"; 
-            //  toastr.options.positionClass = "toast-top-full-width"; 
-            //  options = { 
-            //   tapToDismiss: true, 
-            //   toastClass: 'toast', 
-            //   containerId: 'toast-container', 
-            //   debug: false, 
-            //   fadeIn: 300, 
-            //   fadeOut: 1000, 
-            //   extendedTimeOut: 1000, 
-            //   iconClass: 'toast-info', 
-            //   positionClass: 'toast-top-right', 
-            //   timeOut: 5000, // Set timeOut to 0 to make it sticky 
-            //   titleClass: 'toast-title', 
-            //   messageClass: 'toast-message' } 
-
-
             if (clear == true) { 
             toastr.clear(); 
             } 
@@ -121,8 +97,8 @@
                             <li class="active"><a href="#"><span class="glyphicon glyphicon-question-sign"></span> Ayuda</a></li>
                       </ul>
 
-                      <div style="text-align:right">
-                          <asp:LinkButton ID="OutButton" runat="server" OnClick="OutButton_Click">Cerrar sesion</asp:LinkButton>
+                      <div style="text-align:right; font-size:medium">
+                          <asp:LinkButton ID="OutButton" runat="server" OnClick="OutButton_Click" >Cerrar sesion</asp:LinkButton>
                       </div>
 
                      </div>

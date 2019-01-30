@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
+    [Serializable]
     public class Usuarios
     {
         [Key]
@@ -20,6 +21,8 @@ namespace Entities
         public string Celular { get; set; }
         public DateTime Fecha { get; set; }
 
+        public virtual List<Detalle> Permisos { get; set; }
+
         public Usuarios()
         {
             UsuarioID = 0;
@@ -31,12 +34,18 @@ namespace Entities
             Telefono = string.Empty;
             Celular = string.Empty;
             Fecha = DateTime.Now;
+            this.Permisos = new List<Detalle>();
         }
 
         public Usuarios(string nombreUsuario, string contraseña)
         {
             NombreUsuario = nombreUsuario;
             Contraseña = contraseña;
+        }
+
+        public void AgregarDetalle(int IdDetalle, int ID, string descripcion)
+        {
+            this.Permisos.Add(new Detalle(IdDetalle,ID, descripcion));
         }
     }
 }
