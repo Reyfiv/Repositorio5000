@@ -25,7 +25,7 @@ namespace Registro5000.Registro
 
                     if (categoria == null)
                     {
-                        MostrarMensaje(TiposMensaje.Error, "Registro no encontrado");
+                        Utils.ShowToastr(this.Page, "Registro no encontrado", "Error", "error");
                     }
                     else
                     {
@@ -36,16 +36,16 @@ namespace Registro5000.Registro
         }
 
 
-        private void MostrarMensaje(TiposMensaje tipo, string mensaje)
-        {
+        //private void MostrarMensaje(TiposMensaje tipo, string mensaje)
+        //{
 
-            ErrorLabel.Text = mensaje;
+        //    ErrorLabel.Text = mensaje;
 
-            if (tipo == TiposMensaje.Success)
-                ErrorLabel.CssClass = "alert-success";
-            else
-                ErrorLabel.CssClass = "alert-danger";
-        }
+        //    if (tipo == TiposMensaje.Success)
+        //        ErrorLabel.CssClass = "alert-success";
+        //    else
+        //        ErrorLabel.CssClass = "alert-danger";
+        //}
 
         private void Limpiar()
         {
@@ -113,7 +113,7 @@ namespace Registro5000.Registro
 
             if (IsValid == false)
             {
-                MostrarMensaje(TiposMensaje.Error, "Favor revisar todos los campos");
+                Utils.ShowToastr(this.Page, "Revisar todos los campo", "Error", "error");
                 return;
             }
 
@@ -125,7 +125,7 @@ namespace Registro5000.Registro
 
             if (paso)
             {
-                MostrarMensaje(TiposMensaje.Success, "Guardado con Exito!");
+                Utils.ShowToastr(this.Page, "Guardado con exito!!", "Guardado", "success");
                 Limpiar();
             }
         }
@@ -136,10 +136,10 @@ namespace Registro5000.Registro
             RepositorioBase<Usuarios> repositorio = new RepositorioBase<Usuarios>();
             if (repositorio.Eliminar(id))
             {
-                MostrarMensaje(TiposMensaje.Success, "Eliminado con Exito!");
+                Utils.ShowToastr(this.Page, "Eliminado con exito!!", "Eliminado", "info");
             }
             else
-                MostrarMensaje(TiposMensaje.Error, "Fallo al Eliminar :(");
+                Utils.ShowToastr(this.Page, "Fallo al Eliminar :(", "Error", "error");
             Limpiar();
         }
 
@@ -155,7 +155,7 @@ namespace Registro5000.Registro
                 LlenaCampos(usuario);
             }
             else
-                MostrarMensaje(TiposMensaje.Error, "Error, No existe");
+                Utils.ShowToastr(this.Page, "El usuario que intenta buscar no existe", "Error", "error");
         }
 
         //protected void ValidaExiste_ServerValidate(object source, ServerValidateEventArgs args)

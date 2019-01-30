@@ -1,5 +1,6 @@
 ﻿using BLL;
 using Entities;
+using Registro5000.Utilidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,23 +33,23 @@ namespace Registro5000
                     FormsAuthentication.RedirectFromLoginPage(user.NombreUsuario, true);
                 }
                 else
-                    MostrarMensaje(TiposMensaje.Error, "Usuario no existe");
+                    Utils.ShowToastr(this.Page,"Usuario no existe", "Error", "error");
             }
             else
             {
-                MostrarMensaje(TiposMensaje.Error, "Introduzca Usuario & Contraseña");
+                Utils.ShowToastr(this.Page, "Introduzca Usuario & Contraseña", "Error", "error");
             }
         }
 
-        private void MostrarMensaje(TiposMensaje tipo, string mensaje)
-        {
+        //private void MostrarMensaje(TiposMensaje tipo, string mensaje)
+        //{
 
-            ErrorLabel.Text = mensaje;
+        //    ErrorLabel.Text = mensaje;
 
-            if (tipo == TiposMensaje.Success)
-                ErrorLabel.CssClass = "alert-success";
-            else
-                ErrorLabel.CssClass = "alert-danger";
-        }
+        //    if (tipo == TiposMensaje.Success)
+        //        ErrorLabel.CssClass = "alert-success";
+        //    else
+        //        ErrorLabel.CssClass = "alert-danger";
+        //}
     }
 }
