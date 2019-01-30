@@ -31,7 +31,7 @@ namespace BLL
             Expression<Func<Usuarios, bool>> filtrar = x => true;
             filtrar = t => t.NombreUsuario.Equals(usuario) && t.Contraseña.Equals(contraseña);
             bool paso = false;
-            if (Listar(filtrar) != null)
+            if (Listar(filtrar).Count() != 0)
             {
                 paso = true;
             }
@@ -50,7 +50,5 @@ namespace BLL
         //    }
         //    return paso;
         //}
-
-
     }
 }

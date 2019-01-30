@@ -34,12 +34,10 @@ namespace Registro5000
                 else
                     MostrarMensaje(TiposMensaje.Error, "Usuario no existe");
             }
-
-            //if (IsValid == false)
-            //{
-            //    MostrarMensaje(TiposMensaje.Error, "Favor revisar todos los campos");
-            //    return;
-            //}
+            else
+            {
+                MostrarMensaje(TiposMensaje.Error, "Introduzca Usuario & Contraseña");
+            }
         }
 
         private void MostrarMensaje(TiposMensaje tipo, string mensaje)
